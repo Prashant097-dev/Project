@@ -1,0 +1,17 @@
+1) Login table is for admin , user and merchant login.
+
+2)Admin table contains the dta of admin along with id And Pass  , same as for user , merchant as well .
+
+3)Category table contains specific category with unique Id , same as for Company Table .
+
+4)Product User table is the one which will be displayed for Customer. 
+ 
+5)Product merchant table is the one which will be displayed for Merchant that he will be accessing after log in so as to add certain thing.   
+
+6)Service Center table contains info about various companies and models and other assests as well .
+
+7) Custom Design table is accessed by user after successful login so as to recieve the requirements by him.
+ 
+8)Futuristic Approach is table which is accessed by either of these after log in so as to update regarding upcoming technologies .
+
+9)Every table contains a primary key and are connected through various foreign keys as well.	 

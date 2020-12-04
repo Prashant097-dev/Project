@@ -1,0 +1,113 @@
+﻿@model IEnumerable<ProjectWebAppDBFirst.Models.ProductMerchant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfManufacturing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EngineType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MileageKmpl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CentralLocking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrakesType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RearSuspension)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Merchant)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfManufacturing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EngineType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MileageKmpl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentralLocking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrakesType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RearSuspension)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryNavigation.Category1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyNavigation.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Merchant.Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

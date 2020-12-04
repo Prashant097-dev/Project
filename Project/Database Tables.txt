@@ -1,0 +1,64 @@
+ create database CarnationDb
+ use CarnationDb
+
+ create table Login(Login_Id int primary key , Login_Password nvarchar(20) not null unique)
+
+ create table Admin(Admin_Id int primary key , Admin_Password nvarchar(20) not null unique ,
+ Name nvarchar(50) not null ,Email nvarchar(50) not null ,Age int not null,
+ Address nvarchar(50) not null ,Date_Of_Birth datetime , Contact_Number nvarchar (10) check(
+ Contact_Number like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]') )
+
+ create table New_User(User_Id int primary key , User_Password nvarchar(20) not null unique ,
+ Name nvarchar(50) not null ,Email nvarchar(50) not null ,Age int not null,
+ Address nvarchar(50) not null ,User_PIN float ,User_Location nvarchar(50), Date_Of_Birth datetime , Contact_Number nvarchar (10) check(
+ Contact_Number like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'))
+
+ create table Merchant(Merchant_Id int primary key , Merchant_Password nvarchar(20) not null unique ,
+ Name nvarchar(50) not null ,Email nvarchar(50) not null ,Age int not null,
+ Address nvarchar(50) not null ,Merchant_PIN float ,Merchant_Location nvarchar(50), Date_Of_Birth datetime , Contact_Number nvarchar (10) check(
+ Contact_Number like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'))
+
+ create table Category(Category_Id int ,Category nvarchar(50)primary key)
+
+ create table Company(Company_Id int ,Name nvarchar(50) primary key)
+
+
+create table Product_User(Product_Id int primary key,Name nvarchar(50) not null ,Company nvarchar(50) foreign key references Company,
+Category nvarchar(50) foreign key references Category , Price float , Date_Of_Manufacturing datetime ,Colour nvarchar(50),
+Description nvarchar(50) not null, Engine_Type nvarchar(50) not null ,Mileage_Kmpl float , 
+Central_Locking nvarchar(50) not null , Brakes_Type nvarchar(50) not null ,Rear_Suspension nvarchar(50) not null)
+
+create table Product_Merchant(Product_Id int primary key,Merchant_Id int foreign key references Merchant ,
+Name nvarchar(50) not null ,Company nvarchar(50) foreign key references Company,Model_Number nvarchar(20),
+Category nvarchar(50) foreign key references Category , Price float , Date_Of_Manufacturing datetime ,Colour nvarchar(50),
+Description nvarchar(50) not null, Engine_Type nvarchar(50) not null ,Mileage_Kmpl float , 
+Central_Locking nvarchar(50) not null , Brakes_Type nvarchar(50) not null ,Rear_Suspension nvarchar(50) not null)
+
+create table Service_Center(Service_Center_Id int primary key ,Name nvarchar(50) not null, 
+Company_Type nvarchar(50) foreign key references Company ,Location nvarchar(50) not null ,Category_Type nvarchar(50) foreign key references Category,
+Contact_Number nvarchar (10) check(Contact_Number like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+Timings nvarchar(20) ,Certified_By nvarchar(50) not null  )
+
+create table Futuristic_Approach(ID int primary key , Name nvarchar(50) not null,
+Company_Type nvarchar(50) foreign key references Company ,Category_Type nvarchar(50) foreign key references Category,
+Added_Features nvarchar(50) not null )
+
+create table Custom_Design(ID int primary key , Name nvarchar(50) not null,
+Company_Type nvarchar(50) foreign key references Company ,Category_Type nvarchar(50) foreign key references Category,
+Description nvarchar(200) not null )
+
+select * from Login
+select * from Admin
+select * from Category
+select * from Company
+select * from Custom_Design
+select * from Futuristic_Approach
+select * from Merchant
+select * from New_User
+select * from Product_Merchant
+select * from Product_User
+select * from Service_Center
+
+
+
+

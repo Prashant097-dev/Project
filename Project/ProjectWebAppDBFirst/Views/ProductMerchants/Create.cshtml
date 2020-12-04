@@ -1,0 +1,100 @@
+﻿@model ProjectWebAppDBFirst.Models.ProductMerchant
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ProductMerchant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductId" class="control-label"></label>
+                <input asp-for="ProductId" class="form-control" />
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MerchantId" class="control-label"></label>
+                <select asp-for="MerchantId" class ="form-control" asp-items="ViewBag.MerchantId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company" class="control-label"></label>
+                <select asp-for="Company" class ="form-control" asp-items="ViewBag.Company"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModelNumber" class="control-label"></label>
+                <input asp-for="ModelNumber" class="form-control" />
+                <span asp-validation-for="ModelNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <select asp-for="Category" class ="form-control" asp-items="ViewBag.Category"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfManufacturing" class="control-label"></label>
+                <input asp-for="DateOfManufacturing" class="form-control" />
+                <span asp-validation-for="DateOfManufacturing" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Colour" class="control-label"></label>
+                <input asp-for="Colour" class="form-control" />
+                <span asp-validation-for="Colour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EngineType" class="control-label"></label>
+                <input asp-for="EngineType" class="form-control" />
+                <span asp-validation-for="EngineType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MileageKmpl" class="control-label"></label>
+                <input asp-for="MileageKmpl" class="form-control" />
+                <span asp-validation-for="MileageKmpl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CentralLocking" class="control-label"></label>
+                <input asp-for="CentralLocking" class="form-control" />
+                <span asp-validation-for="CentralLocking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrakesType" class="control-label"></label>
+                <input asp-for="BrakesType" class="form-control" />
+                <span asp-validation-for="BrakesType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RearSuspension" class="control-label"></label>
+                <input asp-for="RearSuspension" class="form-control" />
+                <span asp-validation-for="RearSuspension" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
